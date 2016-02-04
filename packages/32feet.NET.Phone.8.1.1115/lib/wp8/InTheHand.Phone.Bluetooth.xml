@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InTheHand.Phone.Bluetooth</name>
+    </assembly>
+    <members>
+        <member name="T:InTheHand.Devices.Bluetooth.BluetoothDevicePicker">
+            <summary>
+            Represents a UI element that lets the user choose a Bluetooth device.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.BluetoothDevicePicker.PickDeviceAsync">
+            <summary>
+            Shows the Bluetooth device picker so that the user can pick one device.
+            </summary>
+            <returns>When the call to this method completes successfully, it returns a PeerInformation object that represents the device that the user picked.</returns>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.BluetoothDevicePicker.ServiceFilter">
+            <summary>
+            Gets or sets a Guid representing an individual Bluetooth service to filter on.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Bluetooth.BluetoothPickerPage">
+            <summary>
+            XAML Page which implements BluetoothDevicePicker.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.BluetoothPickerPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommDeviceService">
+            <summary>
+            Represents an instance of a service on a Bluetooth BR device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommDeviceService.ConnectionHostName">
+            <summary>
+            Gets the HostName object of the RFCOMM service instance, which is used to connect to the remote device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommDeviceService.ConnectionServiceName">
+            <summary>
+            Gets the service name of the RFCOMM service instance, which is used to connect to the remote device.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommDeviceService.ServiceId">
+            <summary>
+            Gets the RfcommServiceId of this RFCOMM service instance.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId">
+            <summary>
+            Represents a RFCOMM service ID.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.FromShortId(System.UInt32)">
+            <summary>
+            Creates a RfcommServiceId object from a 32-bit service id.
+            </summary>
+            <param name="shortId">The 32-bit service id.</param>
+            <returns>The RfcommServiceId object.</returns>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.FromUuid(System.Guid)">
+            <summary>
+            Creates a RfcommServiceId object from a 128-bit service id.
+            </summary>
+            <param name="uuid">The 128-bit service id.</param>
+            <returns>The <see cref="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId"/> object.</returns>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.AsShortId">
+            <summary>
+            Converts the <see cref="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId"/> to a 32-bit service id if possible.
+            </summary>
+            <returns>Returns the 32-bit service id if the <see cref="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId"/> represents a standardized service.</returns>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.AsString">
+            <summary>
+            Converts the RfcommServiceId to a string.
+            </summary>
+            <returns>Returns the string representation of the 128-bit service id.</returns>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.GenericFileTransfer">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized Generic File Transfer service (with short id 0x1202).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.ObexFileTransfer">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized OBEX File Transfer service (with short id 0x1106).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.ObexObjectPush">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized OBEX Object Push service (with short id 0x1105).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.PhoneBookAccessPce">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized Phone Book Access (PCE) service (with short id 0x112E).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.PhoneBookAccessPse">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized Phone Book Access (PSE) service (with short id 0x112F).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.SerialPort">
+            <summary>
+            Creates a RfcommServiceId object corresponding to the service id for the standardized Serial Port service (with short id 0x1101).
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId.Uuid">
+            <summary>
+            Retrieves the 128-bit service id.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceProvider">
+            <summary>
+            Represents an instance of a local RFCOMM service.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceProvider.CreateAsync(InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId)">
+            <summary>
+            Gets a RfcommServiceProvider object from a DeviceInformation Id for a RFCOMM service instance.
+            </summary>
+            <param name="serviceId">The RfcommServiceId to be hosted locally.</param>
+            <returns>The RfcommServiceProvider object that represents the local RFCOMM service instance.</returns>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceProvider.StartAdvertising(InTheHand.Networking.Sockets.RfcommStreamSocketListener)">
+            <summary>
+            Begins advertising the SDP attributes.
+            </summary>
+            <param name="listener">The <see cref="T:InTheHand.Networking.Sockets.RfcommStreamSocketListener"/> that is listening for incoming connections.</param>
+        </member>
+        <member name="M:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceProvider.StopAdvertising">
+            <summary>
+            Stops advertising the SDP attributes.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceProvider.ServiceId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InTheHand.Networking.Sockets.RfcommStreamSocketListener">
+            <summary>
+            Supports listening for an incoming network connection using a Bluetooth stream socket.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Networking.Sockets.RfcommStreamSocketListener.#ctor">
+            <summary>
+            Creates a new RfcommStreamSocketListener object.
+            </summary>
+        </member>
+        <member name="E:InTheHand.Networking.Sockets.RfcommStreamSocketListener.ConnectionReceived">
+            <summary>
+            An event that indicates that a connection was received on the StreamSocketListener object.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Networking.Sockets.RfcommStreamSocketListenerConnectionReceivedEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InTheHand.Networking.Sockets.RfcommStreamSocketListenerConnectionReceivedEventArgs.Socket">
+            <summary>
+            The StreamSocket object created when a connection is received by the StreamSocketListener object.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Devices.Bluetooth.Resources.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.Bluetooth">
+            <summary>
+              Looks up a localized string similar to Bluetooth.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.ChooseBluetoothDevice">
+            <summary>
+              Looks up a localized string similar to CHOOSE BLUETOOTH DEVICE.
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.ChooseBluetoothDeviceNote">
+            <summary>
+              Looks up a localized string similar to If you can&apos;t see the device you expect, please go to Settings &gt; Bluetooth to ensure the device is paired..
+            </summary>
+        </member>
+        <member name="P:InTheHand.Devices.Bluetooth.Resources.Strings.OpenSettings">
+            <summary>
+              Looks up a localized string similar to Bluetooth is turned off. Change settings now?.
+            </summary>
+        </member>
+        <member name="T:InTheHand.Phone.Bluetooth.StreamSocketExtensions">
+            <summary>
+            Extension methods to support Bluetooth connections.
+            </summary>
+        </member>
+        <member name="M:InTheHand.Phone.Bluetooth.StreamSocketExtensions.ConnectAsync(Windows.Networking.Sockets.StreamSocket,Windows.Networking.HostName,InTheHand.Devices.Bluetooth.Rfcomm.RfcommServiceId)">
+            <summary>
+            Starts an asynchronous operation on a StreamSocket object to connect to a remote network destination specified by a remote hostname and a remote Bluetooth service ID.
+            </summary>
+            <param name="s">The Socket.</param>
+            <param name="remoteHostName">The Bluetooth address of the remote device.</param>
+            <param name="serviceId">The Bluetooth Service.</param>
+            <returns>An asynchronous connect operation on a StreamSocket object.</returns>
+        </member>
+        <member name="M:InTheHand.Phone.Bluetooth.StreamSocketExtensions.ConnectAsync(Windows.Networking.Sockets.StreamSocket,Windows.Networking.HostName,System.Guid)">
+            <summary>
+            Starts an asynchronous operation on a StreamSocket object to connect to a remote network destination specified by a remote hostname and a remote Bluetooth service UUID.
+            </summary>
+            <param name="s">The Socket.</param>
+            <param name="remoteHostName">The Bluetooth address of the remote device.</param>
+            <param name="serviceGuid">The Bluetooth Service.</param>
+            <returns>An asynchronous connect operation on a StreamSocket object.</returns>
+        </member>
+        <member name="M:InTheHand.Phone.Bluetooth.StreamSocketExtensions.ConnectAsync(Windows.Networking.Sockets.StreamSocket,Windows.Networking.HostName,System.Int32)">
+            <summary>
+            Starts an asynchronous operation on a StreamSocket object to connect to a remote network destination specified by a remote hostname and a remote Bluetooth port.
+            </summary>
+            <param name="s">The Socket.</param>
+            <param name="remoteHostName">The Bluetooth address of the remote device.</param>
+            <param name="port">The Bluetooth Port.</param>
+            <returns>An asynchronous connect operation on a StreamSocket object.</returns>
+        </member>
+    </members>
+</doc>

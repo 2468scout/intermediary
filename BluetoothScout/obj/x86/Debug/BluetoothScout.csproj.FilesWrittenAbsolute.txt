@@ -1,0 +1,6 @@
+/media/cake/storage/code/BluetoothScout/BluetoothScout/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/media/cake/storage/code/BluetoothScout/BluetoothScout/obj/x86/Debug/BluetoothScout.gtk-gui.gui.stetic
+/media/cake/storage/code/BluetoothScout/BluetoothScout/bin/Debug/BluetoothScout.exe.mdb
+/media/cake/storage/code/BluetoothScout/BluetoothScout/bin/Debug/BluetoothScout.exe
+/media/cake/storage/code/BluetoothScout/BluetoothScout/obj/x86/Debug/BluetoothScout.exe
+/media/cake/storage/code/BluetoothScout/BluetoothScout/obj/x86/Debug/BluetoothScout.exe.mdb

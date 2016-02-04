@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Portal Login</title>
+ 
+<link href="/auth/custom/styles.css" rel="stylesheet" media="screen" type="text/css" />
+<style type="text/css"> 
+body {
+	background: #000 url(/upload/custom/EGuest-CaptivePortal/Portal.jpg) top left no-repeat;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+#user-agreement {
+    font-family: verdana, arial, hevetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding:10px;
+    margin:10px;
+    width: 550px;
+    border:1px dotted gray;
+    background: gray;
+}
+#user-agreement table, tr, td, input {
+    font-family: verdana, arial, hevetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+}
+#logins input {
+    font-family: verdana, arial, hevetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+}
+</style>
+<script language="javascript" type="text/javascript"> 
+function cp_ua() {
+    this.div_ids = new Array('user-agreement', 'logins');
+    this.cp_a_type = null;
+    this.init = function(cp_a_type) {
+        if(this.cp_a_type == null)
+            this.cp_a_type = cp_a_type;
+    }
+    this.show_forms = function(isUa, isDisabled) {
+        var __user_agreement = (!isUa) ? true : false;
+        var __cmp_str = (__user_agreement) ? this.div_ids[0] : this.div_ids[1];
+        var vm=null, vmid=null;
+        for(var i=0; i<this.div_ids.length; i++) {
+            var div_id = this.div_ids[i];
+            var div_ref = document.getElementById(div_id);
+            var disp_str = (div_id.match(__cmp_str)) ? 'block' : 'none';
+            if(div_ref) {
+                div_ref.style.display = disp_str;
+            }
+        }
+        if(isUa && (vm = document.getElementsByName(this.cp_a_type)[0]) != null) {
+            this.ed_fields(isDisabled);
+            vm.focus();
+        } 
+    }
+    this.ed_fields = function(flag) {   /* Enable/Disable fields */
+        var inputs = document.getElementsByTagName('input');
+        for(var j=0; j<inputs.length; j++) {
+            var vm = inputs[j];
+            if(vm) {
+                vm.disabled = flag;
+            }
+        }
+        return;
+    }
+}
+var CpUa = new cp_ua();
+ 
+function showPolicy() {
+	win = window.open("/upload/custom/EGuest-CaptivePortal/acceptableusepolicy.html", "policy", "height=550,width=550,scrollbars=1");
+}
+</script>
+</head>
+ 
+<body onload="document.getElementById('email').focus();" style="background-color: ">
+<div id="main">
+    <div id='user-agreement' style="display: none">
+        <table width='100%'><tbody>
+          <tr><td>
+            <h3>User Agreement Policy</h3>
+          </td></tr>
+          <tr><td>
+            </head>
+ 
+<body>
+<p>Eanes Independent School District<br />
+  Acceptable Use Guidelines for Technology</p>
+<p>    You are being  given access to the Eanes Independent School District’s electronic  communications system. Through this system, you will be able to communicate  with other schools, colleges, organizations, and people around the world  through the Internet and other electronic information systems/networks. You  will have access to hundreds of databases, libraries, and computer services all  over the world.  </p>
+<p>With this opportunity comes responsibility. It is important  that you read the District Acceptable Use Guidelines, ask questions if you need  help in understanding them, and sign the agreement form. It will be your  responsibility to follow the rules for appropriate use. Inappropriate system  use will result in the loss of the privilege of using this educational and  administrative tool.  </p>
+<p>Please note that the Internet is a network of many types of  communication and information networks. It is possible that you may run across  some material you might find objectionable. While Eanes ISD will use filtering  technology to restrict access to such material, it is not possible to  absolutely prevent such access.</p>
+<p><strong>ACCEPTABLE USE</strong><br />
+  Any use  described below is deemed “acceptable” and consistent with the Eanes ISD  Acceptable Use Guidelines for Technology. The final decision regarding whether  any given use of the network or Internet is acceptable lies with the Chief  Technology Officer or designee.<p>
+<blockquote>
+  1.  Use is mainly for educational purposes, but some limited personal use is  permitted<br />
+  2.  Use furthers the educational and administrative purposes, goals, and objectives  of Eanes ISD<br />
+  3.  Use is limited to your own individual account - you and only you should use  that account<br />
+  4.  Use furthers research related to education and instruction<br />
+  5.  Use does not violate the student code of conduct or employee standards of  conduct</p>
+</blockquote>
+<p><strong>UNACCEPTABLE USE</strong><br />
+  Any of the  following uses is deemed “unacceptable” and a violation of the Eanes ISD  Acceptable Use Guidelines for Technology. The final decision regarding whether  any given use of the network or Internet is acceptable lies with the Chief  Technology Officer or designee.Disciplinary action may be taken for  unacceptable use of the network or Internet.<br />
+<blockquote>
+  1.  Unauthorized use of  copyrighted material, including violating district software licensing  agreements (See EFE)<br />
+  2.  Sending or posting electronic  messages that are abusive, obscene, sexually oriented, threatening, harassing,  damaging to    another’s reputation, or  illegal<br />
+  3.  Use of technology resources  such as chat rooms, social sites, and games in a manner that causes disruption  to the educational program<br />
+  4.  Use of school technology  resources to encourage illegal behavior or threaten school safety<br />
+  5.  Personal, political use to  advocate for or against a candidate, office-holder, political party, or  political position. Research or electronic communications regarding political  issues or candidates shall not be a violation when the activity is to fulfill  an assignment for class credit<br />
+  6.  Use of any means to disable or  bypass the district’s Internet filtering system or other security systems</p>
+</blockquote>
+</body>
+</html>
+ 
+          </td></tr>
+          <tr><td align='center'><br />
+        <input type='button' value='Accept' onClick='CpUa.show_forms(true)' />
+          </td></tr>
+        </tbody></table>
+    </div>
+ 
+	<div id="logins">
+		<div id="errorbox" style="display: none">
+		 </div>
+		<div id="registered" style="display: none">
+			<h1 id="registeredhdr" class="swap"><span>REGISTERED USER</span></h1>
+			<form action="login" id="regform" method="post" autocomplete="off" title="Form used by registered users to login">
+ 
+			<div id="usernamebox">
+			<label for="user" accesskey="u">USERNAME</label>
+			<input type="text" name="user" id="user" size="25" class="text" accesskey="u" />
+			</div>
+			
+			<div id="passwordbox">
+			<label for="password" accesskey="p">PASSWORD</label>
+			<input id="password" name="password" type="password" size="25" class="text" accesskey="p" />
+			</div>
+ 
+			<div id="fqdnbox" style="display: none"></div>
+ 
+			<input type="hidden" name="cmd" value="authenticate" />
+			<input type="submit" name="Login" value="Log In" class="button" />
+			
+			
+			</form>
+		    </div>
+ 
+		<div id="guest" style="">
+			<h1 id="guesthdr" class="swap"><span>GUEST USER</span></h1>
+			<form action="login" id="guestform" emweb_name="captive_portal_guest" method="post" title="Form used by guest users to login">
+ 			<p>Logging in as a guest user indicates you have 	read and accepted the <a href="javascript:void(0)" 	onclick="showPolicy();">Acceptable Use Policy</a>.</p>
+			</form>
+            <form name="form1" method="post" action="/auth/index.html/u"> <span
+class="bodytext"> <input type="hidden" id="email" name="email"
+type="text" value="GuestUser@EanesISD.net" 
+class="text" accesskey="e" />
+<input type="hidden" name="cmd" value="authenticate" /> <input
+type="submit" name="Login" value="I ACCEPT" class="button" /> </span>
+</form>
+		</div>
+		
+		<div id="instructions" style="">
+			<div id="instructionstext"><body>
+<p><strong>Eanes Independent School District<br />
+  Guidelines for Guest Wireless Access</p></strong>
+<p>    You are being given access to the Eanes Independent School District’s electronic communications system. It is important that you read the District Acceptable Use Guidelines, ask questions if you need help in understanding them. It will be your responsibility to follow the rules for appropriate use.</P>  
+<p><strong>By continuing indicates you have read and accept the EISD acceptable use policy and will abide by all state and federal laws. 
+</strong>
+</p>
+<p>
+This network is for guest users or employee/student <strong>Personal devices</strong>.  All district own devices must access the internet ONLY through the E.I.S.D. Staff/Student network.</p>
+<p>Questions about the AUG? Call the EISD helpdesk: 732-9090
+<strong>Your browser must be set to automatically detect settings to continue.</strong></p></div>
+			<div id="instructionsbg"></div>
+		</div>
+	</div>
+</div>
+ 
+ 
+</body>
+</html>
+

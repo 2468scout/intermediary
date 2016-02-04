@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>	
+<MatchScout localFile="true">	
+	<autoZone>
+		false
+	</autoZone>
+	<stackedTotes>
+		false
+	</stackedTotes>
+	<worked>
+		false
+	</worked>
+	<autoPoints>
+		0
+	</autoPoints>
+	<autoComment>
+		 
+	</autoComment>
+	<numberOfStacks>
+		0
+	</numberOfStacks>
+	<functional>
+		false
+	</functional>
+	<coopertition>
+		false
+	</coopertition>
+	<telePoints>
+		0
+	</telePoints>
+	<teleComment>
+		 
+	</teleComment>
+</MatchScout>

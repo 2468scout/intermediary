@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Release/BluetoothScout.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="600 400">
+    <property name="MemberName" />
+    <property name="WidthRequest">600</property>
+    <property name="HeightRequest">400</property>
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="DefaultHeight">400</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="backgroundFixed">
+        <property name="MemberName" />
+        <property name="WidthRequest">605</property>
+        <property name="HeightRequest">400</property>
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Frame" id="frame2">
+            <property name="MemberName" />
+            <property name="WidthRequest">190</property>
+            <property name="HeightRequest">380</property>
+            <child>
+              <widget class="Gtk.Alignment" id="GtkAlignment1">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="Yalign">0</property>
+                <property name="LeftPadding">12</property>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="dataScroll">
+                    <property name="MemberName" />
+                    <property name="Tooltip" translatable="yes">Overview of data collected from scouts</property>
+                    <property name="HscrollbarPolicy">Never</property>
+                    <property name="ShadowType">In</property>
+                    <property name="BorderWidth">5</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="textView">
+                        <property name="MemberName">textView</property>
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Editable">False</property>
+                        <property name="Text" translatable="yes" />
+                        <property name="WrapMode">Char</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="GtkLabel2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;Data Overview&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="type">label_item</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">5</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Frame" id="frame3">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="HeightRequest">190</property>
+            <child>
+              <widget class="Gtk.Alignment" id="GtkAlignment">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="Yalign">0</property>
+                <property name="LeftPadding">12</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed4">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Entry" id="feedUrlEntry">
+                        <property name="MemberName">feedUrl</property>
+                        <property name="WidthRequest">170</property>
+                        <property name="Tooltip" translatable="yes">http://thebluealliance.com/####XXXX</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Text" translatable="yes">2016utwv</property>
+                        <property name="IsEditable">True</property>
+                        <property name="InvisibleChar">•</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">25</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="feedUrlLabel">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">TBA Competition Name</property>
+                      </widget>
+                      <packing>
+                        <property name="X">5</property>
+                        <property name="Y">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.CheckButton" id="uploadCheckbox">
+                        <property name="MemberName">uploadCheckbox</property>
+                        <property name="Tooltip" translatable="yes">Upload match xml when retrieving data from the device</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Label" translatable="yes">Upload to Device</property>
+                        <property name="DrawIndicator">True</property>
+                        <property name="HasLabel">True</property>
+                        <property name="UseUnderline">True</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">55</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="button3">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">170</property>
+                        <property name="Tooltip" translatable="yes">Pulls match data from TheBlueAlliance</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Download Feed Data</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="downloadFeed" />
+                      </widget>
+                      <packing>
+                        <property name="Y">80</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="feedErrorLabel">
+                        <property name="MemberName">feedError</property>
+                        <property name="WidthRequest">170</property>
+                        <property name="Xalign">0</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">150</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="GtkLabel3">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;Feed&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="type">label_item</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">395</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Frame" id="deviceFrame">
+            <property name="MemberName" />
+            <property name="WidthRequest">190</property>
+            <property name="HeightRequest">380</property>
+            <child>
+              <widget class="Gtk.Alignment" id="GtkAlignment2">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="Yalign">0</property>
+                <property name="LeftPadding">12</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed2">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Button" id="button1">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">160</property>
+                        <property name="Tooltip" translatable="yes">Get scouting data from the device</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Pull From Device</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="attemptFind" />
+                      </widget>
+                      <packing>
+                        <property name="Y">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="deviceErrorLabel">
+                        <property name="MemberName">deviceError</property>
+                        <property name="WidthRequest">160</property>
+                        <property name="Xalign">0</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">340</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="GtkLabel5">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;Device&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="type">label_item</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">200</property>
+            <property name="Y">5</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Frame" id="frame5">
+            <property name="MemberName" />
+            <property name="WidthRequest">200</property>
+            <property name="HeightRequest">190</property>
+            <child>
+              <widget class="Gtk.Alignment" id="GtkAlignment3">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="Yalign">0</property>
+                <property name="LeftPadding">12</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed5">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label3">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Upload URL</property>
+                      </widget>
+                      <packing>
+                        <property name="X">5</property>
+                        <property name="Y">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="uploadUrlEntry">
+                        <property name="MemberName">uploadUrl</property>
+                        <property name="WidthRequest">170</property>
+                        <property name="Tooltip" translatable="yes">url to the stats website</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Text" translatable="yes">http://2468.meshiest.com/</property>
+                        <property name="IsEditable">True</property>
+                        <property name="InvisibleChar">•</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">25</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="button2">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">170</property>
+                        <property name="Tooltip" translatable="yes">Upload the scouting match data to stats website</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Upload New Data</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="uploadNew" />
+                      </widget>
+                      <packing>
+                        <property name="Y">60</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="button4">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">170</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Upload All Data</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="uploadAll" />
+                      </widget>
+                      <packing>
+                        <property name="Y">95</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="uploadLabel">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;Upload&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="type">label_item</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">395</property>
+            <property name="Y">195</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
