@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Text.RegularExpressions;
 using Gtk;
 using FRCData;
-using IronRuby;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -52,7 +51,7 @@ public partial class MainWindow: Gtk.Window
 			// determine what kind of entry it is
 			var isTeam = Regex.IsMatch (entry, "^Team \\d+$");
 			var isPit = Regex.IsMatch(entry, "^Team (\\d+)/Team \\1\\.match$");
-			var isMatch = Regex.IsMatch(entry, "^Team (\\d+)/Match \\d+\\.match$");
+			var isMatch = Regex.IsMatch(entry, "^Team (\\d+)/Match ((Quals|Semis|Quarters|Finals) )?\\d+\\.match$");
 
 			string number = Regex.Match (entry, "(?<=^Team )\\d+").Value;
 			if (isTeam || !teams.ContainsKey(number)) {
@@ -70,7 +69,7 @@ public partial class MainWindow: Gtk.Window
 
 				} else if (isMatch) {
 
-					int matchNumber = int.Parse(Regex.Match (entry, "(?<=Match )\\d+").Value);
+					string matchNumber = int.Parse(Regex.Match (entry, "(?<=Match )((Quals|Semis|Quarters|Finals) )?\\d+").Value);
 					teams [number].Matches.Add (matchNumber);
 				}
 			}
@@ -161,7 +160,12 @@ public partial class MainWindow: Gtk.Window
 			Console.WriteLine ("uploading " + file);
 			NameValueCollection nvc = new NameValueCollection ();
 			string number = Regex.Match (file, "(?<=^Team )\\d+").Value;
-			nvc.Add ("team", number);
+			Console.WriteLine (number);
+			if (number != "") {
+				nvc.Add ("team", number);
+			} else {
+				nvc.Add ("match", "1");
+			}
 			var success = HttpUploadFile ("http://localhost/scoutUpload.php", PATH + file, "upload", "text/xml", nvc) == "1";
 			if (success) {
 				Console.WriteLine ("Success!");
@@ -181,7 +185,7 @@ public partial class MainWindow: Gtk.Window
 			var entry = entries [i];
 
 			var isPit = Regex.IsMatch (entry, "^Team (\\d+)/Team \\1\\.match$");
-			var isMatch = Regex.IsMatch (entry, "^Team (\\d+)/Match \\d+\\.match$");
+			var isMatch = Regex.IsMatch (entry, "^Team (\\d+)/Match ((Quals|Semis|Quarters|Finals) )?\\d+\\.match$");
 
 			if (isPit || isMatch)
 				allEntries.Add (entry);
@@ -190,13 +194,21 @@ public partial class MainWindow: Gtk.Window
 		uploadFromList (allEntries);
 	}
 
+	protected void uploadFeed (object sender, EventArgs e)
+	{
+		List<string> matchData = new List<string> ();
+		matchData.Add ("matchdata.xml");
+		List<string> remaining = uploadFromList (matchData);
+		feedErrorLabel.Text = "Upload Feed " + (remaining.Capacity == 0 ? "Succeeded" : "Failed");
+	}
+
 	class Team {
 		public bool HasPit { get; set; }
 		public string Number { get; set; }
-		public List<int> Matches { get; set; }
+		public List<string> Matches { get; set; }
 
 		public Team(){
-			Matches = new List<int>();
+			Matches = new List<string>();
 		}
 	}
 
@@ -260,4 +272,5 @@ public partial class MainWindow: Gtk.Window
 			return "";
 		}
 	}
+
 }
