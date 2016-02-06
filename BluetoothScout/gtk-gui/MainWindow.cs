@@ -31,6 +31,8 @@ public partial class MainWindow
 	
 	private global::Gtk.Label feedErrorLabel;
 	
+	private global::Gtk.Button button5;
+	
 	private global::Gtk.Label GtkLabel3;
 	
 	private global::Gtk.Frame deviceFrame;
@@ -58,6 +60,8 @@ public partial class MainWindow
 	private global::Gtk.Button button2;
 	
 	private global::Gtk.Button button4;
+	
+	private global::Gtk.Label uploadErrorLabel;
 	
 	private global::Gtk.Label uploadLabel;
 
@@ -176,6 +180,16 @@ public partial class MainWindow
 		this.fixed4.Add (this.feedErrorLabel);
 		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.feedErrorLabel]));
 		w9.Y = 150;
+		// Container child fixed4.Gtk.Fixed+FixedChild
+		this.button5 = new global::Gtk.Button ();
+		this.button5.WidthRequest = 170;
+		this.button5.CanFocus = true;
+		this.button5.Name = "button5";
+		this.button5.UseUnderline = true;
+		this.button5.Label = global::Mono.Unix.Catalog.GetString ("Upload Feed Data");
+		this.fixed4.Add (this.button5);
+		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.button5]));
+		w10.Y = 115;
 		this.GtkAlignment.Add (this.fixed4);
 		this.frame3.Add (this.GtkAlignment);
 		this.GtkLabel3 = new global::Gtk.Label ();
@@ -184,9 +198,9 @@ public partial class MainWindow
 		this.GtkLabel3.UseMarkup = true;
 		this.frame3.LabelWidget = this.GtkLabel3;
 		this.backgroundFixed.Add (this.frame3);
-		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.frame3]));
-		w12.X = 395;
-		w12.Y = 5;
+		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.frame3]));
+		w13.X = 395;
+		w13.Y = 5;
 		// Container child backgroundFixed.Gtk.Fixed+FixedChild
 		this.deviceFrame = new global::Gtk.Frame ();
 		this.deviceFrame.WidthRequest = 190;
@@ -209,16 +223,16 @@ public partial class MainWindow
 		this.button1.UseUnderline = true;
 		this.button1.Label = global::Mono.Unix.Catalog.GetString ("Pull From Device");
 		this.fixed2.Add (this.button1);
-		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.button1]));
-		w13.Y = 5;
+		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.button1]));
+		w14.Y = 5;
 		// Container child fixed2.Gtk.Fixed+FixedChild
 		this.deviceErrorLabel = new global::Gtk.Label ();
 		this.deviceErrorLabel.WidthRequest = 160;
 		this.deviceErrorLabel.Name = "deviceErrorLabel";
 		this.deviceErrorLabel.Xalign = 0F;
 		this.fixed2.Add (this.deviceErrorLabel);
-		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.deviceErrorLabel]));
-		w14.Y = 340;
+		global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.deviceErrorLabel]));
+		w15.Y = 340;
 		this.GtkAlignment2.Add (this.fixed2);
 		this.deviceFrame.Add (this.GtkAlignment2);
 		this.GtkLabel5 = new global::Gtk.Label ();
@@ -227,9 +241,9 @@ public partial class MainWindow
 		this.GtkLabel5.UseMarkup = true;
 		this.deviceFrame.LabelWidget = this.GtkLabel5;
 		this.backgroundFixed.Add (this.deviceFrame);
-		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.deviceFrame]));
-		w17.X = 200;
-		w17.Y = 5;
+		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.deviceFrame]));
+		w18.X = 200;
+		w18.Y = 5;
 		// Container child backgroundFixed.Gtk.Fixed+FixedChild
 		this.frame5 = new global::Gtk.Frame ();
 		this.frame5.WidthRequest = 200;
@@ -248,9 +262,9 @@ public partial class MainWindow
 		this.label3.Name = "label3";
 		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("Upload URL");
 		this.fixed5.Add (this.label3);
-		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.label3]));
-		w18.X = 5;
-		w18.Y = 5;
+		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.label3]));
+		w19.X = 5;
+		w19.Y = 5;
 		// Container child fixed5.Gtk.Fixed+FixedChild
 		this.uploadUrlEntry = new global::Gtk.Entry ();
 		this.uploadUrlEntry.TooltipMarkup = "url to the stats website";
@@ -261,8 +275,8 @@ public partial class MainWindow
 		this.uploadUrlEntry.IsEditable = true;
 		this.uploadUrlEntry.InvisibleChar = '•';
 		this.fixed5.Add (this.uploadUrlEntry);
-		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.uploadUrlEntry]));
-		w19.Y = 25;
+		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.uploadUrlEntry]));
+		w20.Y = 25;
 		// Container child fixed5.Gtk.Fixed+FixedChild
 		this.button2 = new global::Gtk.Button ();
 		this.button2.TooltipMarkup = "Upload the scouting match data to stats website";
@@ -272,8 +286,8 @@ public partial class MainWindow
 		this.button2.UseUnderline = true;
 		this.button2.Label = global::Mono.Unix.Catalog.GetString ("Upload New Data");
 		this.fixed5.Add (this.button2);
-		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.button2]));
-		w20.Y = 60;
+		global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.button2]));
+		w21.Y = 60;
 		// Container child fixed5.Gtk.Fixed+FixedChild
 		this.button4 = new global::Gtk.Button ();
 		this.button4.WidthRequest = 170;
@@ -282,8 +296,16 @@ public partial class MainWindow
 		this.button4.UseUnderline = true;
 		this.button4.Label = global::Mono.Unix.Catalog.GetString ("Upload All Data");
 		this.fixed5.Add (this.button4);
-		global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.button4]));
-		w21.Y = 95;
+		global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.button4]));
+		w22.Y = 95;
+		// Container child fixed5.Gtk.Fixed+FixedChild
+		this.uploadErrorLabel = new global::Gtk.Label ();
+		this.uploadErrorLabel.WidthRequest = 170;
+		this.uploadErrorLabel.Name = "uploadErrorLabel";
+		this.uploadErrorLabel.Xalign = 0F;
+		this.fixed5.Add (this.uploadErrorLabel);
+		global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.fixed5 [this.uploadErrorLabel]));
+		w23.Y = 150;
 		this.GtkAlignment3.Add (this.fixed5);
 		this.frame5.Add (this.GtkAlignment3);
 		this.uploadLabel = new global::Gtk.Label ();
@@ -292,9 +314,9 @@ public partial class MainWindow
 		this.uploadLabel.UseMarkup = true;
 		this.frame5.LabelWidget = this.uploadLabel;
 		this.backgroundFixed.Add (this.frame5);
-		global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.frame5]));
-		w24.X = 395;
-		w24.Y = 195;
+		global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.backgroundFixed [this.frame5]));
+		w26.X = 395;
+		w26.Y = 195;
 		this.Add (this.backgroundFixed);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
@@ -303,6 +325,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.button3.Clicked += new global::System.EventHandler (this.downloadFeed);
+		this.button5.Clicked += new global::System.EventHandler (this.uploadFeed);
 		this.button1.Clicked += new global::System.EventHandler (this.attemptFind);
 		this.button2.Clicked += new global::System.EventHandler (this.uploadNew);
 		this.button4.Clicked += new global::System.EventHandler (this.uploadAll);

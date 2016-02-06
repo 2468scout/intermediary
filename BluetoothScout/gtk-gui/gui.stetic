@@ -150,6 +150,20 @@
                         <property name="Y">150</property>
                       </packing>
                     </child>
+                    <child>
+                      <widget class="Gtk.Button" id="button5">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">170</property>
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Upload Feed Data</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="uploadFeed" />
+                      </widget>
+                      <packing>
+                        <property name="Y">115</property>
+                      </packing>
+                    </child>
                   </widget>
                 </child>
               </widget>
@@ -296,6 +310,16 @@
                       </widget>
                       <packing>
                         <property name="Y">95</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="uploadErrorLabel">
+                        <property name="MemberName">uploadError</property>
+                        <property name="WidthRequest">170</property>
+                        <property name="Xalign">0</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">150</property>
                       </packing>
                     </child>
                   </widget>
