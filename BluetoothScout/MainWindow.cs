@@ -69,7 +69,7 @@ public partial class MainWindow: Gtk.Window
 
 				} else if (isMatch) {
 
-					string matchNumber = int.Parse(Regex.Match (entry, "(?<=Match )((Quals|Semis|Quarters|Finals) )?\\d+").Value);
+					string matchNumber = Regex.Match (entry, "(?<=Match )((Quals|Semis|Quarters|Finals) )?\\d+").Value;
 					teams [number].Matches.Add (matchNumber);
 				}
 			}
